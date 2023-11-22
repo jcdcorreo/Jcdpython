@@ -46,6 +46,7 @@ with col4:
 df1 = df[(df['FECHA_CORTE'] == fecha_corte_seleccionada) & (df['ESTACION'] == estacion_seleccionada)]
 
 cuenta = df1['CUENTA'].iloc[0]
+tipoestacion = df1['TIPO_ESTACION'].iloc[0]
 estacion = df1['ESTACION'].iloc[0]
 #departamento = df1['DEPARTAMENTO'].iloc[0]
 provincia = df1['PROVINCIA'].iloc[0]
@@ -69,7 +70,7 @@ plt.grid(True)  # Activar las líneas de cuadrícula
 
 plt.xlabel('Fecha de Muestras')
 plt.ylabel(f'Valores en {unidad}')
-plt.title(f'Estación: {estacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
+plt.title(f'Estación: {estacion}, Tipo de Estación: {estacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
 plt.legend()
 
 # Configurar el localizador de fechas para 30 ticks en el eje X
