@@ -70,7 +70,7 @@ plt.grid(True)  # Activar las líneas de cuadrícula
 
 plt.xlabel('Fecha de Muestras')
 plt.ylabel(f'Valores en {unidad}')
-plt.title(f'Estación: {estacion}, Tipo de Estación: {estacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
+plt.title(f'Estación: {estacion}, Tipo de Estación: {tipoestacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
 plt.legend()
 
 # Configurar el localizador de fechas para 30 ticks en el eje X
