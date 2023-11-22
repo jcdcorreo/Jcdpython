@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 # st.title('Datos Hidrometereológicos Gobierno Regional Piura')
 # Usar HTML para centrar el título
-st.markdown("<h3 style='text-align: center;color: blue'>Datos Hidrometereológicos Gobierno Regional Piura</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;color: green'>Datos Hidrometereológicos Gobierno Regional Piura</h3>", unsafe_allow_html=True)
 
 df = pd.read_csv('tb_medida_estaciones.csv')
 # Convertir las cadenas de texto a datetime
@@ -46,7 +46,6 @@ with col4:
 df1 = df[(df['FECHA_CORTE'] == fecha_corte_seleccionada) & (df['ESTACION'] == estacion_seleccionada)]
 
 cuenta = df1['CUENTA'].iloc[0]
-tipoestacion = df1['TIPO_ESTACION'].iloc[0]
 estacion = df1['ESTACION'].iloc[0]
 #departamento = df1['DEPARTAMENTO'].iloc[0]
 provincia = df1['PROVINCIA'].iloc[0]
@@ -70,7 +69,7 @@ plt.grid(True)  # Activar las líneas de cuadrícula
 
 plt.xlabel('Fecha de Muestras')
 plt.ylabel(f'Valores en {unidad}')
-plt.title(f'Estación: {estacion}, Tipo de Estación: {tipoestacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
+plt.title(f'Estación: {estacion}, Cuenca: {cuenta}, Provincia: {provincia},  Distrito: {distrito}')
 plt.legend()
 
 # Configurar el localizador de fechas para 30 ticks en el eje X
