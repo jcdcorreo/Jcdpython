@@ -1,3 +1,4 @@
+matplotlib==3.4.2  # Asegúrate de especificar la versión que necesitas
 import streamlit as st
 import pandas as pd
 import numpy as np
