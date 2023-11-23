@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 # st.title('Datos Hidrometereológicos Gobierno Regional Piura')
 # Usar HTML para centrar el título
-st.markdown("<h3 style='text-align: center;color: red'>Datos Hidrometereológicos Gobierno Regional Piura</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;color: green'>Datos Hidrometereológicos Gobierno Regional Piura</h3>", unsafe_allow_html=True)
 
 df = pd.read_csv('tb_medida_estaciones.csv')
 # Convertir las cadenas de texto a datetime
