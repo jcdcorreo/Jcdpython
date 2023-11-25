@@ -4,9 +4,30 @@ import numpy as np
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-# st.title('Datos Hidrometereológicos Gobierno Regional Piura')
-# Usar HTML para centrar el título
-st.markdown("<h3 style='text-align: center;color: green'>Datos Hidrometereológicos Gobierno Regional Piura</h3>", unsafe_allow_html=True)
+import base64
+st.set_page_config(page_title="Curso PYTHON PARA CIENCIA DE DATOS", page_icon=":tada:", layout="wide")
+# Función para convertir una imagen a base64
+def get_image_base64(path):
+    with open(path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+image_path = 'logo_grp.png'
+# Convertir la imagen a base64
+encoded_image = get_image_base64(image_path)
+
+# HTML con la imagen codificada
+html = f"""
+    <div style='display: flex; align-items: center;'>
+        <img src='data:image/png;base64,{encoded_image}' style='height: 100px; margin-right: 20px;'>
+        <h3 style='color: blue'>Datos Hidrometeorológicos Gobierno Regional Piura</h3>
+    </div>
+     <div style='display: flex; align-items: center;'>
+ <p>Esta información contiene el nombre de la cuenca, nombre de la estación, medida del caudal a las 007:00 horas, el promedio del caudal a las 24:00 horas, el caudal máximo a las 24:00 horas, niveles de presas a las 7:00 horas, nivel máximo de las presas a las 24:00 horas, el volumen de las presas a las 07:00 y precipitaciones. 
+ <br>La cuenca es una extensión de terreno en un valle, escurren aguas formando un río atravesando valles y escurriendo en el mar.
+ Una cuenca puede tener varias estaciones hidrometeorológicas.</p>
+    </div>
+"""
+# Usar markdown con unsafe_allow_html para permitir HTML
+st.markdown(html, unsafe_allow_html=True)
 
 df = pd.read_csv('tb_medida_estaciones.csv')
 # Convertir las cadenas de texto a datetime
